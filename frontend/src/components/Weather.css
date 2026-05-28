@@ -1,0 +1,132 @@
+.weather-card {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.weather-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.weather-title h2 {
+  font-size: 2em;
+  margin-bottom: 5px;
+}
+
+.timestamp {
+  font-size: 0.9em;
+  opacity: 0.8;
+}
+
+.favorite-btn {
+  background: none;
+  border: none;
+  font-size: 2em;
+  cursor: pointer;
+  transition: transform 0.2s;
+  padding: 0;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.favorite-btn:hover {
+  transform: scale(1.2);
+}
+
+.favorite-btn.active {
+  animation: heart-beat 0.3s;
+}
+
+@keyframes heart-beat {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.2); }
+}
+
+.weather-main {
+  display: flex;
+  align-items: center;
+  margin-bottom: 30px;
+  gap: 30px;
+}
+
+.weather-icon {
+  font-size: 5em;
+}
+
+.weather-info {
+  flex: 1;
+}
+
+.temperature {
+  font-size: 3em;
+  font-weight: bold;
+  line-height: 1;
+  margin-bottom: 10px;
+}
+
+.description {
+  font-size: 1.3em;
+  opacity: 0.9;
+  margin-bottom: 5px;
+}
+
+.feels-like {
+  font-size: 1em;
+  opacity: 0.8;
+}
+
+.weather-details {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 15px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.detail-item {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+}
+
+.detail-item .label {
+  font-size: 0.9em;
+  opacity: 0.8;
+  margin-bottom: 5px;
+}
+
+.detail-item .value {
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+@media (max-width: 768px) {
+  .weather-header {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .weather-main {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .temperature {
+    font-size: 2.5em;
+  }
+
+  .weather-details {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
